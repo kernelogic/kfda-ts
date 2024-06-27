@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: kfdadb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ckDE7gfTYj7MuUn
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+
+volumes:
+  postgres_data:
