@@ -176,54 +176,6 @@ function SignInForm({ locale, dictionary }: SignInFormProps) {
           </div>
         </form>
       </Form>
-
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            {dictionary.auth.signIn.socialHeader}
-          </span>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <Button
-          asChild
-          variant="outline"
-          type="button"
-          disabled={mutation.isPending || mutation.isSuccess}
-        >
-          <a href={authGoogleOauthLink()}>
-            <FaGoogle className="mr-2 h-4 w-4" />
-            {dictionary.auth.signIn.google}
-          </a>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          type="button"
-          disabled={mutation.isPending || mutation.isSuccess}
-        >
-          <a href={authFacebookOauthLink()}>
-            <FaFacebook className="mr-2 h-4 w-4" />
-            {dictionary.auth.signIn.facebook}
-          </a>
-        </Button>
-        <Button
-          asChild
-          variant="outline"
-          type="button"
-          disabled={mutation.isPending || mutation.isSuccess}
-        >
-          <a href={authGithubOauthLink()}>
-            <FaGithub className="mr-2 h-4 w-4" />
-            {dictionary.auth.signIn.github}
-          </a>
-        </Button>
-      </div>
-
       <Toaster />
     </div>
   );

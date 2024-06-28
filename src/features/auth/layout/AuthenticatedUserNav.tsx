@@ -179,14 +179,6 @@ export function AuthenticatedUserNav({
                 <span>{context.dictionary.subscription.menu}</span>
               </DropdownMenuItem>
             )}
-            <DropdownMenuItem onSelect={() => router.push('/api-key')}>
-              <LuKey className="mr-2 h-4 w-4" />
-              <span>{context.dictionary.apiKey.list.menu}</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onSelect={() => router.push('/api-docs')}>
-              <LuFile className="mr-2 h-4 w-4" />
-              <span>{context.dictionary.apiKey.docs.menu}</span>
-            </DropdownMenuItem>
             {process.env.NEXT_PUBLIC_TENANT_MODE === 'multi' &&
             hasPermissionToEditTenant ? (
               <DropdownMenuItem
