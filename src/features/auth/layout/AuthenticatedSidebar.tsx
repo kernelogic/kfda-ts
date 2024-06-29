@@ -19,7 +19,7 @@ export function AuthenticatedSidebar({ context }: { context: AppContext }) {
       </div>
 
       <div className="mb-4 flex items-center space-x-1">
-        <h1 className="pl-7 text-lg font-medium">
+        <h1 className="pl-2">
           Allocator balance: {context.allocatorBalance}
         </h1>
       </div>
