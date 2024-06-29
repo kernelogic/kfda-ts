@@ -22,15 +22,6 @@ export function menus(context: AppContext) {
     isExact: true,
   });
 
-  if (hasPermission(permissions.auditLogRead, context)) {
-    menus.push({
-      id: 'auditLog',
-      label: context.dictionary.auditLog.list.menu,
-      href: `/audit-log`,
-      Icon: LuHistory,
-    });
-  }
-
   if (hasPermission(permissions.membershipRead, context)) {
     menus.push({
       id: 'membership',

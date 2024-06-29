@@ -3,6 +3,22 @@ import axios from "axios";
 /**
  * Various service functions regarding pricing and max dc
  */
+const bytesToSize = (bytes: number): string => {
+    const sizes = ['Bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'];
+    if (bytes === 0) return '0 Byte';
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(2))} ${sizes[i]}`;
+};
+
+export async function getReadableBalance() {
+    try {
+        const balanceRes = await axios.get(`${process.env.BACKEND_URL}/allocator-balance`);
+        return bytesToSize(balanceRes.data.balance);
+    } catch (error) {
+        console.error(`Allocator balance retrieval failure`, error);
+        throw new Error(`Allocator balance retrieval failed`);
+    }
+}
 
 export async function getMaxDataCap(amountInTiB: number) {
     try {

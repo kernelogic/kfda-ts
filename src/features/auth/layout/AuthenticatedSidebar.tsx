@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AuthenticatedMenu } from 'src/features/auth/layout/AuthenticatedMenu';
 import { AuthenticatedUserNav } from 'src/features/auth/layout/AuthenticatedUserNav';
 import TenantSwitcher from 'src/features/tenant/components/TenantSwitcher';
 import { ModeToggle } from 'src/shared/components/ModeToggler';
 import { AppContext } from 'src/shared/controller/appContext';
 import LocaleSwitcher from 'src/translation/LanguageSwitcher';
+import { getReadableBalance } from 'src/features/dataCap/pricingService';
+
 
 export function AuthenticatedSidebar({ context }: { context: AppContext }) {
+
   return (
     <div className="fixed hidden h-screen w-[16rem] shrink-0 bg-gray-100 p-6 text-gray-800 shadow dark:bg-gray-900 dark:text-gray-200 lg:flex lg:flex-col xl:w-[18rem]">
       <div className="mb-4 flex items-center space-x-1">
         <h1 className="pl-7 text-lg font-medium">
           {context.dictionary.projectName}
+        </h1>
+      </div>
+
+      <div className="mb-4 flex items-center space-x-1">
+        <h1 className="pl-7 text-lg font-medium">
+          Allocator balance: {context.allocatorBalance}
         </h1>
       </div>
 

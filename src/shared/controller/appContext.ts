@@ -21,6 +21,7 @@ export interface AppContext {
   currentTenant?: Tenant | null;
   currentSubscription?: Subscription | null;
   apiKey?: ApiKey | null;
+  allocatorBalance?: string | null;
 }
 
 export interface AppContextAuthenticated extends AppContext {

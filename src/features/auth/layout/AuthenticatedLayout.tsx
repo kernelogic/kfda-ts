@@ -4,6 +4,7 @@ import { authGuard } from 'src/features/auth/authGuard';
 import AuthenticatedHeader from 'src/features/auth/layout/AuthenticatedHeader';
 import { AuthenticatedMenu } from 'src/features/auth/layout/AuthenticatedMenu';
 import { AuthenticatedSidebar } from 'src/features/auth/layout/AuthenticatedSidebar';
+import { getReadableBalance } from 'src/features/dataCap/pricingService';
 import { appContextForReact } from 'src/shared/controller/appContext';
 
 export default async function AuthenticatedLayout({
@@ -13,6 +14,7 @@ export default async function AuthenticatedLayout({
 }) {
   const context = await appContextForReact(cookies());
   authGuard(context);
+  context.allocatorBalance = await getReadableBalance();
 
   return (
     <div className="flex min-h-screen flex-col">

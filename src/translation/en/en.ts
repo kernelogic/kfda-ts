@@ -1,7 +1,7 @@
 const dictionary = {
   
 
-  projectName: 'Project',
+  projectName: 'KFDA',
 
   shared: {
     yes: 'Yes',
