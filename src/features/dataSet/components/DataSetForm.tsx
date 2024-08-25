@@ -118,8 +118,8 @@ export function DataSetForm({
 
   React.useEffect(() => {
     const loadedDatasets = datasetsData
-      .filter((dataset, index, self) => self.findIndex(d => d.Name === dataset.Name) === index)
       .filter(dataset => dataset.Type === "S3 Bucket")
+      .filter((dataset, index, self) => self.findIndex(d => d.Name === dataset.Name) === index)
       .map(dataset => ({
         url: dataset.Documentation,
         description: dataset.Description,
