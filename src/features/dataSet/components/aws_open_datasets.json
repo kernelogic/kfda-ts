@@ -11512,27 +11512,6 @@
     },
     {
         "Name": "Hubble Space Telescope",
-        "Description": "Notifications for new data",
-        "ARN": "arn:aws:sns:us-east-1:879230861493:stpubdata",
-        "Region": "us-east-1",
-        "Type": "SNS Topic",
-        "Documentation": "https://archive.stsci.edu/missions-and-data/hst",
-        "Contact": "archive@stsci.edu",
-        "ManagedBy": "[Space Telescope Science Institute](http://www.stsci.edu/)",
-        "UpdateFrequency": "Hourly",
-        "License": "STScI hereby grants the non-exclusive, royalty-free, non-transferable, worldwide right and license to use, reproduce, and publicly display in all media public data from the Hubble Space Telescope.",
-        "Tags": [
-            "astronomy",
-            "aws-pds"
-        ],
-        "Explore": null,
-        "RequesterPays": null,
-        "ControlledAccess": null,
-        "AccountRequired": null,
-        "Host": null
-    },
-    {
-        "Name": "Hubble Space Telescope",
         "Description": "HST Mission data files",
         "ARN": "arn:aws:s3:::stpubdata/hst",
         "Region": "us-east-1",
